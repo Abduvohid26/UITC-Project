@@ -29,7 +29,8 @@ class LoginView(generics.CreateAPIView):
                     'username': user.username,
                     'full_name': user.full_name,
                     'access_token': user.token()['access'],
-                    'refresh_token': user.token()['refresh']
+                    'refresh_token': user.token()['refresh'],
+                    'image': user.image.url
                 }
             )
         return Response(

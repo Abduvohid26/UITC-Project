@@ -7,7 +7,7 @@ PENDING, PROCESSING, SHIPPED, DELIVERED, CANCELLED = ('pending', 'processing', '
 class Food(models.Model):
     id = models.UUIDField(editable=False, unique=True, primary_key=True, default=uuid.uuid4)
     name = models.CharField(max_length=255)
-    image = models.ImageField(upload_to='food-images/')
+    image = models.ImageField(upload_to='food-images/', default='default-food.png')
     description = models.TextField()
     price = models.IntegerField()
     discount_price = models.IntegerField()

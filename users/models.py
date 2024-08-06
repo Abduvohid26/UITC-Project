@@ -8,7 +8,7 @@ import uuid
 class User(AbstractUser):
     id = models.UUIDField(primary_key=True, editable=False, unique=True, default=uuid.uuid4)
     phone_number = models.CharField(max_length=13)
-    image = models.ImageField(upload_to='users-images')
+    image = models.ImageField(upload_to='users-images', default='default-image.jpg')
     created_at = models.DateTimeField(default=timezone.now)
 
     @property
